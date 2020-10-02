@@ -1,0 +1,13 @@
+﻿<Window x:Class="PROBING.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROBING"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="600">
+    <Grid Margin="0,0,0,0">
+        <Frame Name="WORK_FRAME" NavigationUIVisibility="Hidden" Content="Frame" HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="0,0,0,0"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,121 @@
+﻿<Page x:Class="PROBING.WKS_SETUP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROBING"
+      mc:Ignorable="d"
+      Title="WKS_SETUP" Height="900" Width="600">
+
+    <Grid Margin="0,0,0,0">
+        <Button Content="CALCULATE" HorizontalAlignment="Left" Margin="472,477,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click"/>
+        <Button Content="RESET VALUES" HorizontalAlignment="Left" Margin="-332,505,0,0" VerticalAlignment="Top" Width="101"/>
+
+        <TabControl HorizontalAlignment="Left" Height="450" Margin="10,0,0,0" VerticalAlignment="Top" Width="556">
+            <TabItem Header=" WKS " >
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+
+                    <Label Content="Input work coordinate system preset values:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="14"/>
+                    <Label Content="VZOFX[1]=" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="VZOFX" LostFocus="VZOFX_LostFocus" HorizontalAlignment="Left" Height="23" Margin="78,40,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label Content="VZOFY[1]=" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="VZOFY" LostFocus="VZOFY_LostFocus" HorizontalAlignment="Left" Height="23" Margin="78,68,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label Content="VZOFZ[1]=" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="VZOFZ" LostFocus="VZOFZ_LostFocus" HorizontalAlignment="Left" Height="23" Margin="78,98,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label Content="VZOFA[1]=" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="VZOFA" IsReadOnly="True" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="78,126,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label Content="VZOFC[1]=" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="VZOFC" LostFocus="VZOFC_LostFocus" HorizontalAlignment="Left"  Height="23" Margin="78,154,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label Content="Input probe stylus information:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2" Width="225"/>
+                    <Label Content="Sphere diameter" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="101"/>
+                    <TextBox x:Name="SphereDiameter" LostFocus="VZOFX_LostFocus" HorizontalAlignment="Left" Height="23" Margin="127,243,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Stylus length" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Stylus diameter" HorizontalAlignment="Left" Margin="20,299,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="StylusDiameter" LostFocus="VZOFX_LostFocus" HorizontalAlignment="Left" Height="23" Margin="127,302,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="120"/>
+
+
+                    <ComboBox HorizontalAlignment="Left" Margin="127,272,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Name="short">short</ComboBoxItem>
+                        <ComboBoxItem Name="medium" IsSelected="True">medium</ComboBoxItem>
+                        <ComboBoxItem Name="long">long</ComboBoxItem>
+                    </ComboBox>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="   X   ">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="47*"/>
+                        <ColumnDefinition Width="287*"/>
+                        <ColumnDefinition Width="106*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Choose X WKS measuring method:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="14" FontWeight="Bold"/>
+                    <ComboBox Name="COMBOBOX_X" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="194" Grid.ColumnSpan="2" SelectionChanged="WKS_SETUP_X_SELECTION_CHANGED">
+                        <ComboBoxItem Tag="NO">No measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="1P">Surface Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="2PP">Pocket / Island Center Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="4PH">Hole / Boss Center Measurement</ComboBoxItem>
+
+                    </ComboBox>
+                    <Frame Name="WKS_SETUP_X_FRAME" Grid.ColumnSpan="3" Content="WKS_SETUP_X" HorizontalAlignment="Left" Height="330" Margin="10,68,0,0" VerticalAlignment="Top" Width="504"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="   Y   ">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Choose Y WKS measuring method:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <ComboBox Name="COMBOBOX_Y"  HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="194" Grid.ColumnSpan="2" SelectionChanged="WKS_SETUP_Y_SELECTION_CHANGED">
+                        <ComboBoxItem Tag="NO">No measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="1P">Surface Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="2PP">Pocket / Island Center Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="4PH">Hole / Boss Center Measurement</ComboBoxItem>
+
+                    </ComboBox>
+                    <Frame Name="WKS_SETUP_Y_FRAME" Content="WKS_SETUP_Y" HorizontalAlignment="Left" Height="403" Margin="10,68,-69.4,-55" VerticalAlignment="Top" Width="605"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="   Z   ">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Choose Z WKS measuring method:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <ComboBox Name="COMBOBOX_Z"  SelectionChanged="WKS_SETUP_Z_SELECTION_CHANGED" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="194">
+                        <ComboBoxItem Tag="NO">No measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="1P">Surface Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="4P">4 Points Surface Measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="4PB">Surface Measurement at A-90</ComboBoxItem>
+                        <ComboBoxItem Tag="4PB">Hole / Boss Measurement at A-90</ComboBoxItem>
+                    </ComboBox>
+                    <Frame Name="WKS_SETUP_Z_FRAME" Content="WKS_SETUP_Z" HorizontalAlignment="Left" Height="341" Margin="10,68,0,0" VerticalAlignment="Top" Width="504"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="   C   ">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="507*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Choose C WKS measuring method:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <ComboBox Name="COMBOBOX_C" HorizontalAlignment="Left" Margin="10,41,0,0" Width="194" VerticalAlignment="Top"  SelectionChanged="WKS_SETUP_C_SELECTION_CHANGED" Grid.ColumnSpan="2">
+                        <ComboBoxItem Tag="NO">No measurement</ComboBoxItem>
+                        <ComboBoxItem Tag="2P">2 Point measurement - wall</ComboBoxItem>
+                        <ComboBoxItem Tag="4PH">4 Point measurement - hole / boss</ComboBoxItem>
+                        <ComboBoxItem Tag="4PS">4 Point measurement - slot / island</ComboBoxItem>
+                        <ComboBoxItem Tag="4PHA-90">4 Point measurement A-90 - hole / boss</ComboBoxItem>
+                        <ComboBoxItem Tag="4PSA-90">4 Point measurement A-90 - slot / island</ComboBoxItem>
+                        <ComboBoxItem Tag="8PH">8 Point measurement - 2 holes / bosses</ComboBoxItem>
+                    </ComboBox>
+                    <Frame Name="WKS_SETUP_C_FRAME" Content="WKS_SETUP_C_FRAME" HorizontalAlignment="Left" Height="341" Margin="10,68,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="2"/>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <RichTextBox Name="output_code" VerticalScrollBarVisibility="Visible"  HorizontalAlignment="Left" Height="298" Margin="11,522,0,0" VerticalAlignment="Top" Width="555">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Name="output" Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Page>

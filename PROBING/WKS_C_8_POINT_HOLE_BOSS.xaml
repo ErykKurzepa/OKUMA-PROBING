@@ -1,0 +1,43 @@
+﻿<Page x:Class="PROBING.WKS_C_8_POINT_HOLE_BOSS"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROBING"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="WKS_C_8_POINT_HOLE_BOSS">
+
+    <Grid>
+        <Label Content="Angle between 2 holes or bosses  will be used to measure C coordinate." HorizontalAlignment="Left" Margin="10,10,-102,0" VerticalAlignment="Top" Width="392"/>
+        <Label Content="Input feature 1st point for probing:" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="X1" HorizontalAlignment="Left" Height="23" Margin="28,191,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="X1_LostFocus" />
+        <TextBox x:Name="Y1" HorizontalAlignment="Left" Height="23" Margin="157,191,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="Y1_LostFocus"/>
+        <TextBox x:Name="Z1" HorizontalAlignment="Left" Height="23" Margin="289,191,-89,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="Z1_LostFocus"/>
+        <Label Content="X:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top"/>
+        <Label Content="Y:" HorizontalAlignment="Left" Margin="137,188,0,0" VerticalAlignment="Top"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="269,188,0,0" VerticalAlignment="Top"/>
+        <Label Content="Input feature dimensions" HorizontalAlignment="Left" Margin="12,97,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="HEIGHT" HorizontalAlignment="Left" Height="23" Margin="71,128,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="100" LostFocus="HEIGHT_LostFocus"/>
+        <Label Content="Diameter:" HorizontalAlignment="Left" Margin="7,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="Input feature 2nd point for probing:" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="X2" HorizontalAlignment="Left" Height="23" Margin="28,253,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="X2_LostFocus" />
+        <TextBox x:Name="Y2"  HorizontalAlignment="Left" Height="23" Margin="157,253,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="Y2_LostFocus"/>
+        <TextBox x:Name="Z2" HorizontalAlignment="Left" Height="23" Margin="289,253,-89,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="Z2_LostFocus"/>
+        <Label Content="X:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="Y:" HorizontalAlignment="Left" Margin="137,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="269,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="Input C value that will be set in measured position" HorizontalAlignment="Left" Margin="12,285,0,-11" VerticalAlignment="Top"/>
+        <TextBox x:Name="C0" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="30,316,0,-39" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" LostFocus="C0_LostFocus"/>
+        <Label Content="C:" HorizontalAlignment="Left" Margin="12,313,0,-39" VerticalAlignment="Top"/>
+        <TextBox x:Name="ISLAND_HEIGHT" HorizontalAlignment="Left" Height="23" Margin="252,128,-52,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="100" LostFocus="HEIGHT_LostFocus"/>
+        <Label Content="Height:" HorizontalAlignment="Left" Margin="183,125,0,0" VerticalAlignment="Top"/>
+        <Canvas HorizontalAlignment="Left" Height="56" Margin="58,39,0,0" VerticalAlignment="Top" Width="82">
+            <RadioButton  x:Name="HOLE" Content="Hole" IsChecked="True" Canvas.Left="15" Canvas.Top="10" Checked="HOLE_Checked" />
+            <RadioButton  x:Name="BOSS"  Content="Boss" Canvas.Left="15" Canvas.Top="30" Checked="BOSS_Checked" />
+        </Canvas>
+        <Label Content="Feature" HorizontalAlignment="Left" Margin="15,54,0,0" VerticalAlignment="Top"/>
+        <Label Name="ANGLE" Content="Angle:" HorizontalAlignment="Left" Margin="183,43,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

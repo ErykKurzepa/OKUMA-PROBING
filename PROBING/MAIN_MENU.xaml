@@ -1,0 +1,18 @@
+﻿<Page x:Class="PROBING.MAIN_MENU"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROBING"
+      mc:Ignorable="d" d:DesignWidth="550"
+      Title="MAIN_MENU" Height="250">
+    <RichTextBox Name="output_code" HorizontalAlignment="Left" Height="230" Margin="10,10,0,0" VerticalAlignment="Top" Width="530">
+        <FlowDocument>
+            <Paragraph>
+                <Run Text="RichTextBox"/>
+            </Paragraph>
+        </FlowDocument>
+    </RichTextBox>
+
+
+</Page>
